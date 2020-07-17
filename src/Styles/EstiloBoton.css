@@ -1,0 +1,20 @@
+#pausar{
+    -fx-background-color:   #eca519;
+}
+
+#reiniciar{
+    -fx-background-color:   #ac10ff;
+}
+
+#reanudar{
+    -fx-background-color:   #3bff10;
+}
+
+.jfx-button{
+    -fx-background-color:   #90CAF9;
+}
+
+.jfx-button:hover{
+    -fx-background-color:  #64B5F6;
+}
+

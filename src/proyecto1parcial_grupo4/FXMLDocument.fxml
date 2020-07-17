@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1024.0" style="-fx-background-color: #1565C0;" styleClass="jfx-button" stylesheets="@../Styles/EstiloBoton.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyecto1parcial_grupo4.FXMLDocumentController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <VBox alignment="CENTER" layoutX="885.0" layoutY="39.0" prefHeight="800.0" prefWidth="200.0" spacing="25.0" style="-fx-background-color: #0D47A1;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label fx:id="labelCantidadPersonas" text="Cantidad de personas:" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXSlider fx:id="numeroPersonas" blockIncrement="1.0" indicatorPosition="RIGHT" majorTickUnit="1.0" max="18.0" min="2.0" minorTickCount="20" prefHeight="20.0" prefWidth="176.0" value="12.0">
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </JFXSlider>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label fx:id="labelDesface" text="Desfase:" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXSlider fx:id="numeroDesfase" blockIncrement="1.0" indicatorPosition="RIGHT" majorTickUnit="1.0" max="20.0" min="2.0" minorTickCount="20" prefHeight="20.0" prefWidth="176.0" value="2.0">
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </JFXSlider>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label fx:id="labelPosicionComienza" alignment="CENTER" prefHeight="46.0" prefWidth="200.0" text="Posición de la persona que comienza:" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXSlider fx:id="posicionComienzo" blockIncrement="1.0" indicatorPosition="RIGHT" majorTickUnit="1.0" max="18.0" min="1.0" minorTickCount="20" prefHeight="20.0" prefWidth="176.0" value="1.0">
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </JFXSlider>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label fx:id="labelVelocidad" alignment="CENTER" prefHeight="46.0" prefWidth="200.0" text="Velocidad (ms):" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXSlider fx:id="cambioVelocidad" blockIncrement="1.0" indicatorPosition="RIGHT" majorTickUnit="100.0" max="10000.0" min="100.0" minorTickCount="20" prefHeight="20.0" prefWidth="176.0" value="500.0">
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </JFXSlider>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="46.0" prefWidth="200.0" text="Dirección de ejecución:" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <JFXButton fx:id="izquierda" buttonType="RAISED" onAction="#asignarDireccion" styleClass="jfx-button" text="Izquierda">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="derecha" buttonType="RAISED" onAction="#asignarDireccion" styleClass="jfx-button" text="Derecha">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+               <children>
+                  <JFXButton id="iniciar" fx:id="iniciar" buttonType="RAISED" onAction="#iniciarSimulacion" prefHeight="25.0" prefWidth="190.0" styleClass="jfx-button" text="¡Iniciar!" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton id="reiniciar" fx:id="reiniciar" buttonType="RAISED" onAction="#reiniciarSimulacion" prefHeight="25.0" prefWidth="190.0" styleClass="jfx-button" text="Reiniciar" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <JFXButton id="pausar" fx:id="pausar" buttonType="RAISED" onAction="#pausarEjecucion" prefHeight="25.0" prefWidth="80.0" styleClass="jfx-button" text="Pausar" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton id="reanudar" fx:id="reanudar" buttonType="RAISED" onAction="#reanudarEjecucion" prefHeight="25.0" prefWidth="90.0" styleClass="jfx-button" text="Reanudar" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children></VBox>
+      <StackPane fx:id="PanelJuego" prefHeight="483.0" prefWidth="581.0" style="-fx-background-color: rgba(0, 0, 0, 0.3);" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="10.0" />
+    </children>
+</AnchorPane>
